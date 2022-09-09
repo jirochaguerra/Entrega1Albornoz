@@ -9,22 +9,6 @@ def inicio(request):
 
       return render(request, "AppCoder/inicio.html")
 
-def hinchas(request):
-
-      return render(request, "AppCoder/hinchas.html")
-
-def jugadores(request):
-
-      return render(request, "AppCoder/jugadores.html")
-
-def dirigentes(request):
-
-      return render(request, "AppCoder/dirigentes.html")
-
-def funcionarios(request):
-
-      return render(request, "AppCoder/funcionarios.html")
-
 def hinchasFormulario(request):
 
       if request.method == "POST":
@@ -105,30 +89,4 @@ def busquedaNombre(request):
       return render(request, "AppCoder/busquedaNombre.html", contexto)
       
       
-      
-      
-      # hinchas = []
-      # if request.method == "POST":
-      #       nombre = request.POST.get('nombre')
-      #       hinchas = Hinchas.objects.filter(nombre__icontains=nombre)
-      #       return render(request, "AppCoder/busquedaNombre.html", {"hinchas":Hinchas(), "nombre":nombre})
-      # else:
-      #       respuesta= "No enviaste datos"
-      #       return HttpResponse(respuesta)
-
-
-
-# def buscar(request):
-
-#       if request.GET["nombre"]:
-#             nombre = request.GET['nombre']
-#             hinchas= Hinchas.objects.filter(nombre__icontains=nombre)
-#             return render(request, "AppCoder/resultadosBusqueda.html", {"hinchas":Hinchas(), "nombre":nombre})
-#       else:
-#             respuesta= "No enviaste datos"
-#             return HttpResponse(respuesta)
-#       #respuesta = f"Estoy buscando el nombre: {request.GET['nombre']}"
-            
-
-
-
+  

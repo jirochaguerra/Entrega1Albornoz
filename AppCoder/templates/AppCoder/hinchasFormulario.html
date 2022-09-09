@@ -2,7 +2,9 @@
 
 {% load static %}
     
-{% block title %} Hinchas - Formulario {% endblock %}
+{% block title %} {% endblock %}
+
+{% block h1 %} <h1 class="mb-5">Bienvenido a la sección Hinchas</h1> {% endblock %}
 
 {% block body %}
 
@@ -10,11 +12,11 @@
     <p> style="color": red;"> Estan mal los datos, revisar</p>
 {% endif %}
 
-    <form action="" method="POST">{% csrf_token %}
+    <form style="display:inline;" action="" method="POST">{% csrf_token %}
         <table>
             {{miFormulario.as_table}}
         </table>
         <input type="submit" value="Enviar">
     </form>
-
+    
 {% endblock %}

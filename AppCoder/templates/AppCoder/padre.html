@@ -8,7 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        {%block title%}
         <title>Inicio</title>
+        {%endblock%}
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{%static 'AppCoder/assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -20,15 +22,16 @@
 
 
     </head>
-    <body>
+    <body background="../../static/AppCoder/assets/img/FotoQatar.jpg">
+        
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="btn btn-primary" href="#signup">INICIO</a>
-                <a class="navbar-brand" href="#!">Hinchas</a>
-                <a class="navbar-brand" href="#!">Jugadores</a>
-                <a class="navbar-brand" href="#!">Dirigentes</a>
-                <a class="navbar-brand" href="#!">Funcionarios</a>
+                <a class="btn btn-primary" href="{% url 'Inicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'HinchasFormulario' %}">Hinchas</a>
+                <a class="navbar-brand" href="{% url 'JugadoresFormulario' %}">Jugadores</a>
+                <a class="navbar-brand" href="{% url 'DirigentesFormulario' %}">Dirigentes</a>
+                <a class="navbar-brand" href="{% url 'FuncionariosFormulario' %}">Funcionarios</a>
             </div>
         </nav>
 
@@ -40,7 +43,9 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Bienvenido al sitio oficial de Peñarol</h1>
+                            {%block h1%}
+                            
+                            {%endblock%}
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
