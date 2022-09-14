@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#from AppCoder.views import * #Ya no seria necesario :) 
+from AppChat.views3 import room
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('AppCoder/', include('AppCoder.urls')),
- 
+    path('', include('AppChat.urls')),
 ]

@@ -23,18 +23,19 @@
 
     </head>
     <body background="../../static/AppCoder/assets/img/FotoQatar.jpg">
-        
+        {%block Navigation%}   
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="btn btn-primary" href="{% url 'Inicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'HinchasFormulario' %}">Hinchas</a>
-                <a class="navbar-brand" href="{% url 'JugadoresFormulario' %}">Jugadores</a>
-                <a class="navbar-brand" href="{% url 'DirigentesFormulario' %}">Dirigentes</a>
-                <a class="navbar-brand" href="{% url 'FuncionariosFormulario' %}">Funcionarios</a>
+                <a class="navbar-brand" href="{% url 'SeleccionesFormulario' %}">Selecciones</a>
+                <a class="navbar-brand" href="{% url 'NoticiasFormulario' %}">Noticias</a>
+                <a class="navbar-brand" href="{% url 'ProductosFormulario' %}">Productos</a>
+                <a class="navbar-brand" href="{% url 'AppChat' %}">Chat</a>
+                <a class="navbar-brand" href="{% url 'NosotrosFormulario' %}">Nosotros</a>
             </div>
         </nav>
-
+        {%endblock%}    
 
         <!-- Masthead-->
         <header class="masthead">
@@ -67,9 +68,6 @@
         {% endblock %}
 
        
-
-        
-     
         <!-- Footer-->
         <footer class="footer bg-light">
             <div class="container">

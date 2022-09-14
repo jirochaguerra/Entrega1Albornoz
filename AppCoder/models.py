@@ -2,28 +2,34 @@ from django.db import models
 
 # Create your models here.
 
-class Hinchas(models.Model):
+class Selecciones(models.Model):
     nombre= models.CharField(max_length=30)
     apellido= models.CharField(max_length=30)
     numerodesocio= models.IntegerField()
     email= models.EmailField()
 
-class Jugadores(models.Model):
+class Noticias(models.Model):
     nombre= models.CharField(max_length=30)
     apellido= models.CharField(max_length=30)
     posicion= models.CharField(max_length=20)
     numerocamiseta=models.IntegerField()
     email= models.EmailField()
 
-class Dirigentes(models.Model):
+class Productos(models.Model):
     nombre= models.CharField(max_length=30)
     apellido= models.CharField(max_length=30)  
     contactotelefonico= models.IntegerField()
     email= models.EmailField()
 
-class Funcionarios(models.Model):
+class Chat(models.Model):
     nombre= models.CharField(max_length=30)
     apellido= models.CharField(max_length=30)  
     numerofuncionario= models.IntegerField()
+    contactotelefonico= models.IntegerField()
+    email= models.EmailField()
+
+class Nosotros(models.Model):
+    nombre= models.CharField(max_length=30)
+    apellido= models.CharField(max_length=30)  
     contactotelefonico= models.IntegerField()
     email= models.EmailField()
