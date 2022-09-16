@@ -4,7 +4,7 @@ from AppChat import views3
 
 urlpatterns = [
    
-    path('', views.inicio, name="Inicio"),
+    path('home/', views.inicio, name="home"),
     path('seleccionesFormulario', views.seleccionesFormulario, name="SeleccionesFormulario"),
     path('noticiasFormulario', views.noticiasFormulario, name="NoticiasFormulario"),
     path('productosFormulario', views.productosFormulario, name="ProductosFormulario"),

@@ -7,7 +7,7 @@ from AppCoder.forms import SeleccionesFormulario, NoticiasFormulario, ProductosF
 
 def inicio(request):
 
-      return render(request, "AppCoder/inicio.html")
+      return render(request, "AppCoder/home.html")
 
 def seleccionesFormulario(request):
 
