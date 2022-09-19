@@ -47,7 +47,7 @@
 
 
     <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto" id="intro">
-    <h1 class="p-3 fs-2 border-top border-3">Una página para poder entrontrar todo lo que necesitas saber del <span class="text-primary">Mundial</span></h1>
+    <h1 class="p-3 fs-2 border-top border-3">Una página para poder encontrar todo lo que necesitas saber del <span class="text-primary">Mundial</span></h1>
     </section>
 
    <!--========================================================== -->
@@ -61,8 +61,10 @@
             <img src="../../static/AppCoder/media/Equipo.jpeg" alt="desarrollo"   width="180" height="160">
 
             <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1">Equipos</h3>
-                <p class="px-4">En esta sección encontraras todo lo que necesitas saber de los equipos que conforman el mundial</p>
+                <h3 class="fs-5 mt-4 px-4 pb-1"> 
+                    <a class="btn btn-primary" href="{% url 'Selecciones' %}">Selecciones</a>
+                </h3>
+                <p class="px-4">En esta sección encontrarás todo lo que necesitas saber de los equipos que conforman el mundial</p>
             </div>
 
         </div>
@@ -71,8 +73,10 @@
             <img src="../../static/AppCoder/media/Apuesta.jpeg" alt="concepto" width="180" height="160">
 
             <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1 icono-wrap">Apuestas</h3>
-                <p class="px-4">Podrás apostar por tu equipo favorito y ganar dinero!</p>
+                <h3 class="fs-5 mt-4 px-4 pb-1"> 
+                    <a class="btn btn-primary" href="{% url 'Noticias' %}">Noticias</a>
+                </h3>
+                <p class="px-4">Podrás acceder a las noticias de último momento de tu equipo favorito</p>
             </div>
         </div>   
     </div>
@@ -82,7 +86,9 @@
             <img src="../../static/AppCoder/media/Comunidad.jpeg" alt="comunicaciones" width="180" height="160">
 
             <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1">Chat</h3>
+                <h3 class="fs-5 mt-4 px-4 pb-1"> 
+                    <a class="btn btn-primary" href="{% url 'home' %}">Chat</a>
+                </h3>
                 <p class="px-4">En esta sección podrás chatear con personas fanáticas del mundial al igual que vos!</p>
             </div>
         </div>
@@ -91,8 +97,10 @@
             <img src="../../static/AppCoder/media/About us.jpeg" alt="seo" width="180" height="160" >
 
             <div>
-                <h3 class="fs-5 mt-4 px-4 pb-1">About Us</h3>
-                <p class="px-4">En esta sección podrás encontrar un poco de información del equipo que diseño la página</p>
+                <h3 class="fs-5 mt-4 px-4 pb-1"> 
+                        <a class="btn btn-primary" href="{% url 'Nosotros' %}">About us</a>
+                </h3>
+                <p class="px-4">En esta sección podrás encontrar un poco de información del equipo que diseñó la página</p>
             </div>
         </div>   
     </div>

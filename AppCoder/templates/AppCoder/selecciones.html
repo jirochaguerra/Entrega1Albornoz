@@ -6,6 +6,82 @@
 <title>Selecciones</title>
 {% endblock title %}
 
+{% block body %}
+
+{% endblock %}
+
 {% block content %}
+
+<!-- Header-->
+<header>
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder" style="color:black">Selecciones</h1>
+        </div>
+    </div>
+</header>
+
+ <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-8">
+                    <!-- Nested row for non-featured blog posts-->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Blog post-->
+                            <div class="card mb-4">
+                        <a href="#!"><img class="card-img-top" src="../../static/AppCoder/media/argentina.png" alt="..." /></a>
+                        <div class="card-body">
+                            <h2 class="card-title h4">Argentina</h2>
+                        </div>
+                    </div>
+
+
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Blog post-->
+                            <div class="card mb-4">
+                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/media/uruguay.png" alt="..." /></a>
+                                <div class="card-body">
+                                    <h2 class="card-title h4">Uruguay</h2>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Pagination-->
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/media/brasil.png" alt="..." /></a>
+                                <div class="card-body">
+                                    <h2 class="card-title h4">Brasil</h2>
+                                </div>
+                    </div>
+                <div>
+
+            </div>
+        </div>
+
+<div>
+<form action="" method="POST">
+                    {% csrf_token %}
+                    {{jugadores.as_p}}
+
+                    <input type="text" name="pais", id="pais">
+                    <input type="submit" value="Buscar jugadores por país">
+
+                </form>
+</div>
+<br>
+<br>
+    {% for jugador in jugadores %}
+        <p> {{jugador.nombre}}
+            {{jugador.apellido}} - {{jugador.posicion}} - {{jugador.nacimiento}} </p>
+    {% endfor %}
+<br>
+<br>
 
 {% endblock %}

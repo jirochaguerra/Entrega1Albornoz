@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponse
-from AppCoder.models import Selecciones, Noticias, Productos, Chat, Nosotros
+from AppCoder.models import Selecciones, Noticias, Productos, Chat, Nosotros, jugadoresSelecciones
 from AppCoder.forms import SeleccionesFormulario, NoticiasFormulario, ProductosFormulario, ChatFormulario, NosotrosFormulario
 
 # Create your views here.
@@ -11,7 +11,18 @@ def inicio(request):
 
 def selecciones(request):
 
-      return render(request, "AppCoder/selecciones.html")
+      jugador = []
+
+      if request.method == "POST":
+            pais= request.POST.get('pais')
+            jugador= jugadoresSelecciones.objects.filter(pais__icontains=pais)
+
+      contexto = {
+            'my_form': jugadoresSelecciones(),
+            'jugadores': jugador
+      }
+
+      return render(request, "AppCoder/selecciones.html", contexto)
 
 def noticias(request):
 
@@ -33,7 +44,11 @@ def nosotros(request):
 
       return render(request, "AppCoder/nosotros.html")
 
-
+def error(request):
+      from datetime import date, datetime
+      fecha_actual = date.today()
+      diccionario = {"fecha": fecha_actual}
+      return render(request, "AppCoder/error.html", diccionario)
 
 def seleccionesFormulario(request):
 

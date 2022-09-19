@@ -33,3 +33,10 @@ class Nosotros(models.Model):
     apellido= models.CharField(max_length=30)  
     contactotelefonico= models.IntegerField()
     email= models.EmailField()
+
+class jugadoresSelecciones(models.Model):
+    pais = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    nacimiento = models.DateField()
+    posicion = models.CharField(max_length=30)

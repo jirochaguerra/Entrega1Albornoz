@@ -12,6 +12,7 @@ urlpatterns = [
     path('chat/', views.chat, name="Chat"),
     path('nosotros/', views.nosotros, name="Nosotros"), 
     path('busquedaNombre', views.busquedaNombre, name="BusquedaNombre"),
+    path('error/', views.error, name="Error"),
     path('chat/', views3.home, name="AppChat"),
     path('AppChat', views3.home, name="AppChat"),
     #path('A', views3.home, name='home'),
