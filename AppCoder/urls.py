@@ -4,13 +4,15 @@ from AppChat import views3
 
 urlpatterns = [
    
-    path('home/', views.inicio, name="home"),
-    path('seleccionesFormulario', views.seleccionesFormulario, name="SeleccionesFormulario"),
-    path('noticiasFormulario', views.noticiasFormulario, name="NoticiasFormulario"),
-    path('productosFormulario', views.productosFormulario, name="ProductosFormulario"),
-    path('chatFormulario', views.chatFormulario, name="ChatFormulario"),
-    path('nosotrosFormulario', views.nosotrosFormulario, name="NosotrosFormulario"), 
+    path('home/', views.inicio, name="Inicio"),
+    path('selecciones/', views.selecciones, name="Selecciones"),
+    path('noticias/', views.noticias, name="Noticias"),
+    path('noticia1/', views.noticia1, name="Noticia1"),
+    path('contactos/', views.contactos, name="Contactos"),
+    path('chat/', views.chat, name="Chat"),
+    path('nosotros/', views.nosotros, name="Nosotros"), 
     path('busquedaNombre', views.busquedaNombre, name="BusquedaNombre"),
+    path('chat/', views3.home, name="AppChat"),
     path('AppChat', views3.home, name="AppChat"),
     #path('A', views3.home, name='home'),
     path('<str:room>/', views3.room, name='room'),

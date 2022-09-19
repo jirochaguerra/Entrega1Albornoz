@@ -1,12 +1,12 @@
 {% extends "AppCoder/padre.html" %}
-
+ 
 {% load static %}
-    
-{% block title %} {% endblock %}
 
-{% block h1 %} <h1 class="mb-5">Todas las noticias sobre Qatar 2022</h1> {% endblock %}
+{% block title %} 
+<title>Noticias</title>
+{% endblock title %}
 
-{% block body %}
+{% block content %}
 
     <!-- Page content-->
         <div class="container">
@@ -18,18 +18,18 @@
                         <div class="col-lg-6">
                             <!-- Blog post-->
                             <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="../../static/AppCoder/assets/img/grupos.png" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="../../static/AppCoder/media/grupos.png" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">14 de septiembre de 2022</div>
                             <h2 class="card-title h4">Grupos del Mundial Qatar 2022</h2>
                             <p class="card-text">Así quedó definida la primera fase de Qatar 2022 y los cruces iniciales. El detalle, zona por zona.</p>
-                            <a class="btn btn-primary" href="{% url 'noticia1' %}">Leer más →</a>
+                            <a class="btn btn-primary" href="{% url 'Noticia1' %}">Leer más →</a>
                         </div>
                     </div>
 
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/assets/img/ciudad.png" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/media/ciudad.png" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">28 de agosto de 2022</div>
                                     <h2 class="card-title h4">Qatar: datos sobre el país</h2>
@@ -41,7 +41,7 @@
                         <div class="col-lg-6">
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/assets/img/estadio.jpg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/media/estadio.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">10 de septiembre de 2022</div>
                                     <h2 class="card-title h4">Inauguración del estadio de la final</h2>
@@ -51,7 +51,7 @@
                             </div>
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/assets/img/viaje.jpg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/media/viaje.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">01 de septiembre de 2022</div>
                                     <h2 class="card-title h4">Se regalan viajes al mundial para aquellos que no tengan entradas!</h2>
@@ -66,7 +66,7 @@
                 <!-- Side widgets-->
                 <div class="col-lg-4">
                     <div class="card mb-4">
-                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/assets/img/qatar.jpg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../../static/AppCoder/media/qatar.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">12 de agosto de 2022</div>
                                     <h2 class="card-title h4">Fechas importantes de Qatar 2022</h2>

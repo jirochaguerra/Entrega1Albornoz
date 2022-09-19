@@ -85,13 +85,15 @@ body {
 
 #bg-contactos{
     position:relative;
-    top: -130px;
+    top: px;
+    margin-top:0cm;
 } 
 
  #seccion-contacto{
     background-color: #1b2a4e;
     min-height:500px;
     position:relative;
+
 }
 
 /*=========================CONTACTOS FORMULARIO================================*/

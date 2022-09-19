@@ -9,6 +9,32 @@ def inicio(request):
 
       return render(request, "AppCoder/home.html")
 
+def selecciones(request):
+
+      return render(request, "AppCoder/selecciones.html")
+
+def noticias(request):
+
+      return render(request, "AppCoder/blogNoticias.html")
+
+def noticia1(request):
+
+      return render(request, "AppCoder/noticia1.html")
+
+def contactos(request):
+
+      return render(request, "AppCoder/contact.html")
+
+def chat(request):
+
+      return render(request, "AppChat/chatFormulario.html")
+
+def nosotros(request):
+
+      return render(request, "AppCoder/nosotros.html")
+
+
+
 def seleccionesFormulario(request):
 
       if request.method == "POST":
