@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponse
-from AppCoder.models import Selecciones, Noticias, Productos, Chat, Nosotros, jugadoresSelecciones
-from AppCoder.forms import SeleccionesFormulario, NoticiasFormulario, ProductosFormulario, ChatFormulario, NosotrosFormulario
+from AppCoder.models import jugadoresSelecciones, Contactos
+from AppCoder.forms import ContactosFormulario, JugadoresFormulario, NosotrosFormulario
 
 # Create your views here.
 
@@ -32,13 +32,23 @@ def noticia1(request):
 
       return render(request, "AppCoder/noticia1.html")
 
-def contactos(request):
+def contactosFormulario(request):
 
-      return render(request, "AppCoder/contact.html")
+      if request.method == "POST":
+            
+            miFormularioContactos= ContactosFormulario(request.POST)
+            print(miFormularioContactos)
 
-def chat(request):
+            if miFormularioContactos.is_valid:
+                  
+                  informacion = miFormularioContactos.cleaned_data
+                  contactos = Contactos(email=informacion['email'], nombre=informacion['nombre'], contactotelefonico=informacion['contactotelefonico'], mensaje=informacion['mensaje'])
+                  contactos.save()
+                  return render(request, "AppCoder/home.html")
 
-      return render(request, "AppChat/chatFormulario.html")
+      else:
+            miFormularioContactos= ContactosFormulario()
+      return render(request, "AppCoder/contact.html",{"miFormulario":miFormularioContactos})
 
 def nosotros(request):
 
@@ -50,87 +60,22 @@ def error(request):
       diccionario = {"fecha": fecha_actual}
       return render(request, "AppCoder/error.html", diccionario)
 
-def seleccionesFormulario(request):
+def jugadoresForm(request):
 
       if request.method == "POST":
             
-            miFormularioSelecciones= SeleccionesFormulario(request.POST)
-            print(miFormularioSelecciones)
+            miFormularioJugadores= JugadoresFormulario(request.POST)
+            print(miFormularioJugadores)
 
-            if miFormularioSelecciones.is_valid:
+            if miFormularioJugadores.is_valid:
                   
-                  informacion = miFormularioSelecciones.cleaned_data
-                  selecciones = Selecciones(nombre=informacion['nombre'], apellido=informacion['apellido'], numerodesocio=informacion['numerodesocio'], email=informacion['email'])
-                  selecciones.save()
-                  return render(request, "AppCoder/inicio.html")
+                  informacion = miFormularioJugadores.cleaned_data
+                  jugadores = jugadoresSelecciones(pais=informacion['pais'], nombre=informacion['nombre'], apellido=informacion['apellido'], nacimiento=informacion['nacimiento'], posicion=informacion['posicion'])
+                  jugadores.save()
+                  return render(request, "AppCoder/selecciones.html")
       else:
-            miFormularioSelecciones= SeleccionesFormulario()
-      return render(request, "AppCoder/seleccionesFormulario.html",{"miFormulario":miFormularioSelecciones})
-
-def noticiasFormulario(request):
-
-      if request.method == "POST":
-
-            miFormularioNoticias= NoticiasFormulario(request.POST)
-            print(miFormularioNoticias)
-
-            if miFormularioNoticias.is_valid:
-
-                  informacion = miFormularioNoticias.cleaned_data
-                  noticias = Noticias(nombre=informacion['nombre'], apellido=informacion['apellido'], posicion=informacion['posicion'], numerocamiseta=informacion['numerocamiseta'], email=informacion['email'])
-                  noticias.save()
-                  return render(request, "AppCoder/inicio.html")
-      else:
-            miFormularioNoticias= NoticiasFormulario()
-      return render (request, "AppCoder/noticiasFormulario.html",{"miFormulario":miFormularioNoticias})
-
-def productosFormulario(request):
-      if request.method == "POST":
-
-            miFormularioProductos= ProductosFormulario(request.POST)
-            print(miFormularioProductos)
-
-            if miFormularioProductos.is_valid:
-
-                  informacion = miFormularioProductos.cleaned_data
-                  productos = Productos(nombre=informacion['nombre'], apellido=informacion['apellido'], contactotelefonico=informacion['contactotelefonico'], email=informacion['email'])
-                  productos.save()
-                  return render(request, "AppCoder/inicio.html")
-      else:
-            miFormularioProductos= ProductosFormulario()
-      return render (request, "AppCoder/productosFormulario.html",{"miFormulario":miFormularioProductos})
-
-def chatFormulario(request):
-      if request.method == "POST":
-
-            miFormularioChat= ChatFormulario(request.POST)
-            print(miFormularioChat)
-
-            if miFormularioChat.is_valid:
-
-                  informacion = miFormularioChat.cleaned_data
-                  chat = Chat(nombre=informacion['nombre'], apellido=informacion['apellido'], numerofuncionario=informacion['numerofuncionario'], contactotelefonico=informacion['contactotelefonico'], email=informacion['email'])
-                  chat.save()
-                  return render(request, "AppCoder/inicio.html")
-      else:
-            miFormularioChat= ChatFormulario()
-      return render (request, "AppCoder/chatFormulario.html",{"miFormulario":miFormularioChat})
-
-def productosFormulario(request):
-      if request.method == "POST":
-
-            miFormularioProductos= ProductosFormulario(request.POST)
-            print(miFormularioProductos)
-
-            if miFormularioProductos.is_valid:
-
-                  informacion = miFormularioProductos.cleaned_data
-                  productos = Productos(nombre=informacion['nombre'], apellido=informacion['apellido'], contactotelefonico=informacion['contactotelefonico'], email=informacion['email'])
-                  productos.save()
-                  return render(request, "AppCoder/inicio.html")
-      else:
-            miFormularioProductos= ProductosFormulario()
-      return render (request, "AppCoder/productosFormulario.html",{"miFormulario":miFormularioProductos})
+            miFormularioJugadores= JugadoresFormulario()
+      return render(request, "AppCoder/jugadoresFormulario.html",{"miFormulario":miFormularioJugadores})
 
 def nosotrosFormulario(request):
       if request.method == "POST":
@@ -147,19 +92,6 @@ def nosotrosFormulario(request):
       else:
             miFormularioNosotros= NosotrosFormulario()
       return render (request, "AppCoder/nosotrosFormulario.html",{"miFormulario":miFormularioNosotros})
-
-def busquedaNombre(request):
-
-      hincha= []
-      if request.method == "POST":
-            nombre= request.POST.get('nombre')
-            hincha= Hinchas.objects.filter(nombre__icontains=nombre)
-
-      contexto = {
-            'my_form': Hinchas(),
-            'hinchas': hincha
-      }
-      return render(request, "AppCoder/busquedaNombre.html", contexto)
       
       
   

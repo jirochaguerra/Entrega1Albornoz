@@ -31,8 +31,8 @@
                         <div class="col-lg-6">
                             <!-- Blog post-->
                             <div class="card mb-4">
-                               <a><img class="card-img-top" src="../../static/AppCoder/media/argentina.png" alt="..." /></a>
-                            <div class="card-body">
+                        <a><img class="card-img-top" src="../../static/AppCoder/media/argentina.png" alt="..." /></a>
+                        <div class="card-body">
                             <h2 class="card-title h4">Argentina</h2>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <!-- Side widgets-->
                 <div class="col-lg-4">
                     <div class="card mb-4">
-                            <a><img class="card-img-top" src="../../static/AppCoder/media/brasil.png" alt="..." /></a>
+                                <a><img class="card-img-top" src="../../static/AppCoder/media/brasil.png" alt="..." /></a>
                                 <div class="card-body">
                                     <h2 class="card-title h4">Brasil</h2>
                                 </div>
@@ -67,29 +67,15 @@
 
 <div>
 
-<form action="" method="POST">
-                    {% csrf_token %}
-                    {{jugadores.as_p}}
+    {% if miFormulario.errors %}
+        <p> style="color": red;"> Estan mal los datos, revisar</p>
+    {% endif %}
 
-                    <input type="text" name="pais", id="pais">
-                    <input type="submit" value="Buscar jugadores por país">
-
-                </form>
-</div>
-<br>
-<br>
-    {% for jugador in jugadores %}
-        <p> {{jugador.nombre}}
-            {{jugador.apellido}} - {{jugador.posicion}} - {{jugador.nacimiento}} </p>
-    {% endfor %}
-
-<p class="px-4"><b>Si identificas que falta un jugador en el país que has elegido, por favor, presiona en Agregar Jugador y contribuye con nosotros</b></p>
-
-<h3 class="fs-5 mt-4 px-4 pb-1">
-    <div class="row content-center">
-        <a class="btn btn-primary" href= "{% url 'JugadoresFormulario' %}">Agregar Jugador</a>
-    </div>
-</h3>
-
-
+    <form action="" method="POST">{% csrf_token %}
+        <table>
+            {{miFormulario.as_table}}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+    
 {% endblock %}
